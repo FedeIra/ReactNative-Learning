@@ -1,6 +1,7 @@
 import React from 'react';
 import Constants from 'expo-constants';
 import { View, Text } from 'react-native';
+import RepositoryList from './RepositoryList';
 
 const Main = () => {
   return (
@@ -11,6 +12,7 @@ const Main = () => {
       }}
     >
       <Text>Rate Repository Application</Text>
+      <RepositoryList />
     </View>
   );
 };
