@@ -1,18 +1,26 @@
 import React from 'react';
-import Constants from 'expo-constants';
 import { View, Text } from 'react-native';
 import RepositoryList from './RepositoryList';
+import AppBar from './AppBar';
+import { Redirect, Route, Switch } from 'react-router-native';
 
 const Main = () => {
   return (
     <View
       style={{
-        marginTop: Constants.statusBarHeight,
-        flexGrow: 1,
+        flex: 1,
       }}
     >
-      <Text>Rate Repository Application</Text>
-      <RepositoryList />
+      <AppBar />
+      <Switch>
+        <Route path="/" exact>
+          <RepositoryList />
+        </Route>
+        <Route path="/signin" exact>
+          <Text>Working on it</Text>
+        </Route>
+        <Redirect to="/" />
+      </Switch>
     </View>
   );
 };
