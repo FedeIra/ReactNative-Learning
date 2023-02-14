@@ -3,13 +3,27 @@ import { View, StyleSheet } from 'react-native';
 import StyledText from './StyledText.jsx';
 import Constants from 'expo-constants';
 import theme from './theme.js';
+import { Link } from 'react-router-native';
+
+const AppBarTab = ({ active, children, to }) => {
+  return (
+    <Link to={to}>
+      <StyledText fontWeight='bold' style={styles.text}>
+        {children}
+      </StyledText>
+    </Link>
+  );
+};
 
 const AppBar = () => {
   return (
     <View style={styles.container}>
-      <StyledText fontSize="bold" style={styles.text}>
+      <AppBarTab active={true} to='/'>
         Repositories
-      </StyledText>
+      </AppBarTab>
+      <AppBarTab active={true} to='/signin'>
+        Sign In
+      </AppBarTab>
     </View>
   );
 };
@@ -18,13 +32,13 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: Constants.statusBarHeight + 10,
     backgroundColor: theme.appBar.primary,
-    paddingBottom: 10,
-    paddingTop: 10,
+    paddingBottom: 30,
+    paddingTop: 40,
+    flexDirection: 'row',
   },
   text: {
     color: theme.appBar.textPrimary,
-    alignSelf: 'center',
-    marginRight: '50%',
+    paddingHorizontal: 10,
   },
 });
 
