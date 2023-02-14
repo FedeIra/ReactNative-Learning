@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import RepositoryList from './RepositoryList.jsx';
-import AppBar from './AppBar.jsx';
+import AppBar from './AppBar'; /* i remove .jsx extension so it can use AppBar.ios / android / default */
 import { Route, Routes } from 'react-router-native';
 
 const Main = () => {
