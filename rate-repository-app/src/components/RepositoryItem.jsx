@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, StyleSheet } from 'react-native';
+import { Image, View, StyleSheet, Platform } from 'react-native';
 import RepositoryStats from './RepositoryStats';
 import StyledText from './StyledText.jsx';
 import theme from './theme.js';
@@ -29,8 +29,8 @@ const RepositoryItemHeader = ({
         flex: 1,
       }}
     >
-      <StyledText fontWeight="bold">{fullName}</StyledText>
-      <StyledText color="secondary">{description}</StyledText>
+      <StyledText fontWeight='bold'>{fullName}</StyledText>
+      <StyledText color='secondary'>{description}</StyledText>
       <StyledText style={styles.language}>{language}</StyledText>
     </View>
   </View>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     color: theme.colors.white,
     backgroundColor: theme.colors.primary,
     alignSelf: 'flex-start',
-    borderRadius: 7,
+    borderRadius: 5,
     overflow: 'hidden',
     marginVertical: 4,
   },
