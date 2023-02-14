@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import RepositoryList from './RepositoryList';
-import AppBar from './AppBar';
+import AppBar from './AppBar.jsx';
 import { Redirect, Route, Switch } from 'react-router-native';
 
 const Main = () => {
@@ -13,13 +13,13 @@ const Main = () => {
     >
       <AppBar />
       <Switch>
-        <Route path="/" exact>
+        <Route path='/' exact>
           <RepositoryList />
         </Route>
-        <Route path="/signin" exact>
+        <Route path='/signin' exact>
           <Text>Working on it</Text>
         </Route>
-        <Redirect to="/" />
+        <Redirect to='/' />
       </Switch>
     </View>
   );
